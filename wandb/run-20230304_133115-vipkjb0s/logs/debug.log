@@ -1,0 +1,26 @@
+2023-03-04 13:31:15,662 INFO    MainThread:1473451 [wandb_setup.py:_flush():68] Configure stats pid to 1473451
+2023-03-04 13:31:15,662 INFO    MainThread:1473451 [wandb_setup.py:_flush():68] Loading settings from /home/users/alexsun/.config/wandb/settings
+2023-03-04 13:31:15,663 INFO    MainThread:1473451 [wandb_setup.py:_flush():68] Loading settings from /workspace/alexsun/SimPLe/wandb/settings
+2023-03-04 13:31:15,663 INFO    MainThread:1473451 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2023-03-04 13:31:15,663 WARNING MainThread:1473451 [wandb_setup.py:_flush():68] Could not find program at -m simple.__main__
+2023-03-04 13:31:15,663 INFO    MainThread:1473451 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': None, 'program': '-m simple.__main__'}
+2023-03-04 13:31:15,663 INFO    MainThread:1473451 [wandb_init.py:_log_setup():492] Logging user logs to /workspace/alexsun/SimPLe/wandb/run-20230304_133115-vipkjb0s/logs/debug.log
+2023-03-04 13:31:15,663 INFO    MainThread:1473451 [wandb_init.py:_log_setup():493] Logging internal logs to /workspace/alexsun/SimPLe/wandb/run-20230304_133115-vipkjb0s/logs/debug-internal.log
+2023-03-04 13:31:15,663 INFO    MainThread:1473451 [wandb_init.py:init():532] calling init triggers
+2023-03-04 13:31:15,664 INFO    MainThread:1473451 [wandb_init.py:init():538] wandb.init called with sweep_config: {}
+config: {'agents': 16, 'batch_size': 4, 'bottleneck_bits': 128, 'bottleneck_noise': 0.1, 'clip_grad_norm': 1.0, 'compress_steps': 5, 'device': 'cuda', 'done_on_last_rollout_step': True, 'dropout': 0.15, 'env_name': 'Freeway', 'epochs': 15, 'experiment_name': '04-03-23-13:31:08', 'filter_double_steps': 3, 'frame_shape': (3, 105, 80), 'hidden_layers': 2, 'hidden_size': 96, 'input_noise': 0.05, 'latent_rnn_max_sampling': 0.5, 'latent_state_size': 128, 'latent_use_max_probability': 0.8, 'load_models': False, 'noop_max': 8, 'ppo_gamma': 0.99, 'ppo_lr': 0.0001, 'recurrent_state_size': 64, 'render_evaluation': False, 'render_training': False, 'residual_dropout': 0.5, 'rollout_length': 50, 'save_models': False, 'scheduled_sampling_decay_steps': 22250, 'simulation_flip_first_random_for_beginning': True, 'stacking': 4, 'stack_internal_states': True, 'target_loss_clipping': 0.03, 'use_ppo_lr_decay': False, 'use_stochastic_model': True, 'use_wandb': True, 'method_name': 'SimPL'}
+2023-03-04 13:31:15,664 INFO    MainThread:1473451 [wandb_init.py:init():588] starting backend
+2023-03-04 13:31:15,664 INFO    MainThread:1473451 [wandb_init.py:init():592] setting up manager
+2023-03-04 13:31:15,668 INFO    MainThread:1473451 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-03-04 13:31:15,672 INFO    MainThread:1473451 [wandb_init.py:init():599] backend started and connected
+2023-03-04 13:31:15,675 INFO    MainThread:1473451 [wandb_init.py:init():687] updated telemetry
+2023-03-04 13:31:15,754 INFO    MainThread:1473451 [wandb_init.py:init():727] communicating run to backend with 60.0 second timeout
+2023-03-04 13:31:16,049 INFO    MainThread:1473451 [wandb_run.py:_on_init():2134] communicating current version
+2023-03-04 13:31:16,107 INFO    MainThread:1473451 [wandb_run.py:_on_init():2143] got version response 
+2023-03-04 13:31:16,107 INFO    MainThread:1473451 [wandb_init.py:init():775] starting run threads in backend
+2023-03-04 13:31:16,260 INFO    MainThread:1473451 [wandb_run.py:_console_start():2114] atexit reg
+2023-03-04 13:31:16,260 INFO    MainThread:1473451 [wandb_run.py:_redirect():1969] redirect: SettingsConsole.WRAP_RAW
+2023-03-04 13:31:16,260 INFO    MainThread:1473451 [wandb_run.py:_redirect():2034] Wrapping output streams.
+2023-03-04 13:31:16,261 INFO    MainThread:1473451 [wandb_run.py:_redirect():2059] Redirects installed.
+2023-03-04 13:31:16,262 INFO    MainThread:1473451 [wandb_init.py:init():817] run started, returning control to user process
+2023-03-04 13:31:16,262 INFO    MainThread:1473451 [wandb_watch.py:watch():51] Watching

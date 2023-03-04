@@ -1,0 +1,41 @@
+
+
+
+
+
+Random exploration: 100%|██████████████████| 6400/6400 [00:10<00:00, 632.87it/s]
+Epoch:   0%|                                             | 0/15 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+Training world model:   0%|                           | 0/45000 [00:00<?, ?it/s]
+Epoch:   0%|                                             | 0/15 [00:17<?, ?it/s]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/workspace/alexsun/SimPLe/simple/__main__.py", line 212, in <module>
+    simple.train()
+  File "/workspace/alexsun/SimPLe/simple/__main__.py", line 143, in train
+    self.trainer.train(epoch, self.real_env)
+  File "/workspace/alexsun/SimPLe/simple/trainer.py", line 119, in train
+    new_next_states.requires_grad = True
+RuntimeError: only Tensors of floating point and complex dtype can require gradients
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/workspace/alexsun/SimPLe/simple/__main__.py", line 212, in <module>
+    simple.train()
+  File "/workspace/alexsun/SimPLe/simple/__main__.py", line 143, in train
+    self.trainer.train(epoch, self.real_env)
+  File "/workspace/alexsun/SimPLe/simple/trainer.py", line 119, in train
+    new_next_states.requires_grad = True
+RuntimeError: only Tensors of floating point and complex dtype can require gradients

@@ -1,0 +1,38 @@
+
+
+
+
+Random exploration: 100%|██████████████████| 6400/6400 [00:09<00:00, 665.68it/s]
+Epoch:   0%|                                             | 0/15 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+Epoch:   0%|                                             | 0/15 [00:16<?, ?it/s]
+Traceback (most recent call last):                    | 0/45000 [00:00<?, ?it/s]
+  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/workspace/alexsun/SimPLe/simple/__main__.py", line 212, in <module>
+    simple.train()
+  File "/workspace/alexsun/SimPLe/simple/__main__.py", line 143, in train
+    self.trainer.train(epoch, self.real_env)
+  File "/workspace/alexsun/SimPLe/simple/trainer.py", line 80, in train
+    optimizer = torch.optim.SGD(torch.nn.ParameterList([torch.nn.Parameter(torch.zeros(1))]), lr=prune_rate)
+NameError: name 'prune_rate' is not defined
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/workspace/alexsun/SimPLe/simple/__main__.py", line 212, in <module>
+    simple.train()
+  File "/workspace/alexsun/SimPLe/simple/__main__.py", line 143, in train
+    self.trainer.train(epoch, self.real_env)
+  File "/workspace/alexsun/SimPLe/simple/trainer.py", line 80, in train
+    optimizer = torch.optim.SGD(torch.nn.ParameterList([torch.nn.Parameter(torch.zeros(1))]), lr=prune_rate)
+NameError: name 'prune_rate' is not defined

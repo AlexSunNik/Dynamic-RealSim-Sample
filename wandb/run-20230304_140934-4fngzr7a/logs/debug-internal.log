@@ -1,0 +1,198 @@
+2023-03-04 14:09:34,769 INFO    StreamThr :1532061 [internal.py:wandb_internal():87] W&B internal server running at pid: 1532061, started at: 2023-03-04 14:09:34.769039
+2023-03-04 14:09:34,772 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: status
+2023-03-04 14:09:34,774 INFO    WriterThread:1532061 [datastore.py:open_for_write():85] open: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/run-4fngzr7a.wandb
+2023-03-04 14:09:34,777 DEBUG   SenderThread:1532061 [sender.py:send():336] send: header
+2023-03-04 14:09:34,857 DEBUG   SenderThread:1532061 [sender.py:send():336] send: run
+2023-03-04 14:09:35,229 INFO    SenderThread:1532061 [dir_watcher.py:__init__():216] watching files in: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files
+2023-03-04 14:09:35,230 INFO    SenderThread:1532061 [sender.py:_start_run_threads():1067] run started: 4fngzr7a with start time 1677967774.769375
+2023-03-04 14:09:35,230 DEBUG   SenderThread:1532061 [sender.py:send_request():363] send_request: summary_record
+2023-03-04 14:09:35,230 INFO    SenderThread:1532061 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-03-04 14:09:35,235 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: check_version
+2023-03-04 14:09:35,236 DEBUG   SenderThread:1532061 [sender.py:send_request():363] send_request: check_version
+2023-03-04 14:09:35,298 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: run_start
+2023-03-04 14:09:35,346 DEBUG   HandlerThread:1532061 [system_info.py:__init__():31] System info init
+2023-03-04 14:09:35,347 DEBUG   HandlerThread:1532061 [system_info.py:__init__():46] System info init done
+2023-03-04 14:09:35,347 INFO    HandlerThread:1532061 [system_monitor.py:start():151] Starting system monitor
+2023-03-04 14:09:35,347 INFO    SystemMonitor:1532061 [system_monitor.py:_start():116] Starting system asset monitoring threads
+2023-03-04 14:09:35,347 INFO    HandlerThread:1532061 [system_monitor.py:probe():172] Collecting system info
+2023-03-04 14:09:35,348 INFO    SystemMonitor:1532061 [interfaces.py:start():168] Started cpu
+2023-03-04 14:09:35,348 INFO    SystemMonitor:1532061 [interfaces.py:start():168] Started disk
+2023-03-04 14:09:35,349 INFO    SystemMonitor:1532061 [interfaces.py:start():168] Started gpu
+2023-03-04 14:09:35,349 INFO    SystemMonitor:1532061 [interfaces.py:start():168] Started memory
+2023-03-04 14:09:35,350 INFO    SystemMonitor:1532061 [interfaces.py:start():168] Started network
+2023-03-04 14:09:35,416 DEBUG   HandlerThread:1532061 [system_info.py:probe():195] Probing system
+2023-03-04 14:09:35,423 DEBUG   HandlerThread:1532061 [system_info.py:_probe_git():180] Probing git
+2023-03-04 14:09:35,440 DEBUG   HandlerThread:1532061 [system_info.py:_probe_git():188] Probing git done
+2023-03-04 14:09:35,440 DEBUG   HandlerThread:1532061 [system_info.py:probe():241] Probing system done
+2023-03-04 14:09:35,440 DEBUG   HandlerThread:1532061 [system_monitor.py:probe():181] {'os': 'Linux-5.4.0-88-generic-x86_64-with-glibc2.29', 'python': '3.8.10', 'heartbeatAt': '2023-03-04T22:09:35.416597', 'startedAt': '2023-03-04T22:09:34.754531', 'docker': None, 'cuda': None, 'args': ('--use-wandb', '--method-name', 'man_alpha'), 'state': 'running', 'program': '-m simple.__main__', 'git': {'remote': 'https://github.com/thomas-schillaci/SimPLe.git', 'commit': 'c9aef786966f6d939f4d24cb8ed49f5c7d49e8e4'}, 'email': 'alexsxl417@gmail.com', 'root': '/workspace/alexsun/SimPLe', 'host': 'shi-03', 'username': 'alexsun', 'executable': '/usr/bin/python3', 'cpu_count': 32, 'cpu_count_logical': 64, 'cpu_freq': {'current': 1265.07065625, 'min': 1000.0, 'max': 3900.0}, 'cpu_freq_per_core': [{'current': 1711.747, 'min': 1000.0, 'max': 3900.0}, {'current': 1000.237, 'min': 1000.0, 'max': 3900.0}, {'current': 1000.641, 'min': 1000.0, 'max': 3900.0}, {'current': 1472.403, 'min': 1000.0, 'max': 3900.0}, {'current': 1000.584, 'min': 1000.0, 'max': 3900.0}, {'current': 1120.041, 'min': 1000.0, 'max': 3900.0}, {'current': 1357.046, 'min': 1000.0, 'max': 3900.0}, {'current': 1223.731, 'min': 1000.0, 'max': 3900.0}, {'current': 1883.134, 'min': 1000.0, 'max': 3900.0}, {'current': 1000.385, 'min': 1000.0, 'max': 3900.0}, {'current': 1001.404, 'min': 1000.0, 'max': 3900.0}, {'current': 1777.29, 'min': 1000.0, 'max': 3900.0}, {'current': 1000.233, 'min': 1000.0, 'max': 3900.0}, {'current': 1000.073, 'min': 1000.0, 'max': 3900.0}, {'current': 1000.987, 'min': 1000.0, 'max': 3900.0}, {'current': 1000.192, 'min': 1000.0, 'max': 3900.0}, {'current': 1001.384, 'min': 1000.0, 'max': 3900.0}, {'current': 1000.439, 'min': 1000.0, 'max': 3900.0}, {'current': 1000.087, 'min': 1000.0, 'max': 3900.0}, {'current': 999.83, 'min': 1000.0, 'max': 3900.0}, {'current': 3696.459, 'min': 1000.0, 'max': 3900.0}, {'current': 1188.292, 'min': 1000.0, 'max': 3900.0}, {'current': 2027.699, 'min': 1000.0, 'max': 3900.0}, {'current': 1000.554, 'min': 1000.0, 'max': 3900.0}, {'current': 1000.335, 'min': 1000.0, 'max': 3900.0}, {'current': 1001.017, 'min': 1000.0, 'max': 3900.0}, {'current': 1000.186, 'min': 1000.0, 'max': 3900.0}, {'current': 1000.692, 'min': 1000.0, 'max': 3900.0}, {'current': 1000.498, 'min': 1000.0, 'max': 3900.0}, {'current': 1000.036, 'min': 1000.0, 'max': 3900.0}, {'current': 1000.998, 'min': 1000.0, 'max': 3900.0}, {'current': 999.906, 'min': 1000.0, 'max': 3900.0}, {'current': 1595.848, 'min': 1000.0, 'max': 3900.0}, {'current': 1001.722, 'min': 1000.0, 'max': 3900.0}, {'current': 1000.625, 'min': 1000.0, 'max': 3900.0}, {'current': 2082.773, 'min': 1000.0, 'max': 3900.0}, {'current': 1001.303, 'min': 1000.0, 'max': 3900.0}, {'current': 1116.363, 'min': 1000.0, 'max': 3900.0}, {'current': 1351.875, 'min': 1000.0, 'max': 3900.0}, {'current': 1139.925, 'min': 1000.0, 'max': 3900.0}, {'current': 1612.259, 'min': 1000.0, 'max': 3900.0}, {'current': 1000.075, 'min': 1000.0, 'max': 3900.0}, {'current': 1000.523, 'min': 1000.0, 'max': 3900.0}, {'current': 2046.984, 'min': 1000.0, 'max': 3900.0}, {'current': 1000.539, 'min': 1000.0, 'max': 3900.0}, {'current': 1000.641, 'min': 1000.0, 'max': 3900.0}, {'current': 1001.042, 'min': 1000.0, 'max': 3900.0}, {'current': 1000.374, 'min': 1000.0, 'max': 3900.0}, {'current': 1001.03, 'min': 1000.0, 'max': 3900.0}, {'current': 1001.253, 'min': 1000.0, 'max': 3900.0}, {'current': 1001.218, 'min': 1000.0, 'max': 3900.0}, {'current': 1000.278, 'min': 1000.0, 'max': 3900.0}, {'current': 3596.527, 'min': 1000.0, 'max': 3900.0}, {'current': 1186.322, 'min': 1000.0, 'max': 3900.0}, {'current': 1561.377, 'min': 1000.0, 'max': 3900.0}, {'current': 1000.887, 'min': 1000.0, 'max': 3900.0}, {'current': 1000.154, 'min': 1000.0, 'max': 3900.0}, {'current': 1001.355, 'min': 1000.0, 'max': 3900.0}, {'current': 1001.287, 'min': 1000.0, 'max': 3900.0}, {'current': 1001.032, 'min': 1000.0, 'max': 3900.0}, {'current': 1000.198, 'min': 1000.0, 'max': 3900.0}, {'current': 1000.203, 'min': 1000.0, 'max': 3900.0}, {'current': 1001.067, 'min': 1000.0, 'max': 3900.0}, {'current': 1000.885, 'min': 1000.0, 'max': 3900.0}], 'disk': {'total': 3519.342658996582, 'used': 3260.8162536621094}, 'gpu': 'NVIDIA GeForce RTX 2080 Ti', 'gpu_count': 8, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 2080 Ti', 'memory_total': 11554717696}, {'name': 'NVIDIA GeForce RTX 2080 Ti', 'memory_total': 11554717696}, {'name': 'NVIDIA GeForce RTX 2080 Ti', 'memory_total': 11554717696}, {'name': 'NVIDIA GeForce RTX 2080 Ti', 'memory_total': 11554717696}, {'name': 'NVIDIA GeForce RTX 2080 Ti', 'memory_total': 11554717696}, {'name': 'NVIDIA GeForce RTX 2080 Ti', 'memory_total': 11554717696}, {'name': 'NVIDIA GeForce RTX 2080 Ti', 'memory_total': 11554717696}, {'name': 'NVIDIA GeForce RTX 2080 Ti', 'memory_total': 11554717696}], 'memory': {'total': 503.5553665161133}}
+2023-03-04 14:09:35,441 INFO    HandlerThread:1532061 [system_monitor.py:probe():182] Finished collecting system info
+2023-03-04 14:09:35,441 INFO    HandlerThread:1532061 [system_monitor.py:probe():185] Publishing system info
+2023-03-04 14:09:35,441 DEBUG   HandlerThread:1532061 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-03-04 14:09:35,442 DEBUG   HandlerThread:1532061 [system_info.py:_save_pip():67] Saving pip packages done
+2023-03-04 14:09:35,443 INFO    HandlerThread:1532061 [system_monitor.py:probe():187] Finished publishing system info
+2023-03-04 14:09:35,475 DEBUG   SenderThread:1532061 [sender.py:send():336] send: files
+2023-03-04 14:09:35,476 INFO    SenderThread:1532061 [sender.py:_save_file():1321] saving file wandb-metadata.json with policy now
+2023-03-04 14:09:35,488 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: stop_status
+2023-03-04 14:09:35,489 DEBUG   SenderThread:1532061 [sender.py:send_request():363] send_request: stop_status
+2023-03-04 14:09:35,594 DEBUG   SenderThread:1532061 [sender.py:send():336] send: telemetry
+2023-03-04 14:09:35,595 DEBUG   SenderThread:1532061 [sender.py:send():336] send: telemetry
+2023-03-04 14:09:35,984 INFO    wandb-upload_0:1532061 [upload_job.py:push():138] Uploaded file /tmp/tmpjtaivuc4wandb/3ppvx1hu-wandb-metadata.json
+2023-03-04 14:09:36,236 INFO    Thread-13 :1532061 [dir_watcher.py:_on_file_created():275] file/dir created: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/output.log
+2023-03-04 14:09:36,236 INFO    Thread-13 :1532061 [dir_watcher.py:_on_file_created():275] file/dir created: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/requirements.txt
+2023-03-04 14:09:36,237 INFO    Thread-13 :1532061 [dir_watcher.py:_on_file_created():275] file/dir created: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/wandb-metadata.json
+2023-03-04 14:09:36,238 INFO    Thread-13 :1532061 [dir_watcher.py:_on_file_created():275] file/dir created: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/wandb-summary.json
+2023-03-04 14:09:38,234 INFO    Thread-13 :1532061 [dir_watcher.py:_on_file_modified():292] file/dir modified: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/output.log
+2023-03-04 14:09:39,864 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: status_report
+2023-03-04 14:09:40,235 INFO    Thread-13 :1532061 [dir_watcher.py:_on_file_modified():292] file/dir modified: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/output.log
+2023-03-04 14:09:42,236 INFO    Thread-13 :1532061 [dir_watcher.py:_on_file_modified():292] file/dir modified: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/output.log
+2023-03-04 14:09:44,237 INFO    Thread-13 :1532061 [dir_watcher.py:_on_file_modified():292] file/dir modified: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/output.log
+2023-03-04 14:09:44,868 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: status_report
+2023-03-04 14:09:46,238 INFO    Thread-13 :1532061 [dir_watcher.py:_on_file_modified():292] file/dir modified: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/output.log
+2023-03-04 14:09:48,238 INFO    Thread-13 :1532061 [dir_watcher.py:_on_file_modified():292] file/dir modified: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/output.log
+2023-03-04 14:09:50,042 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: status_report
+2023-03-04 14:09:50,240 INFO    Thread-13 :1532061 [dir_watcher.py:_on_file_modified():292] file/dir modified: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/output.log
+2023-03-04 14:09:50,487 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-04 14:09:52,241 INFO    Thread-13 :1532061 [dir_watcher.py:_on_file_modified():292] file/dir modified: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/output.log
+2023-03-04 14:09:54,242 INFO    Thread-13 :1532061 [dir_watcher.py:_on_file_modified():292] file/dir modified: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/output.log
+2023-03-04 14:09:55,102 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: status_report
+2023-03-04 14:09:55,489 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-04 14:09:56,243 INFO    Thread-13 :1532061 [dir_watcher.py:_on_file_modified():292] file/dir modified: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/output.log
+2023-03-04 14:09:58,244 INFO    Thread-13 :1532061 [dir_watcher.py:_on_file_modified():292] file/dir modified: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/output.log
+2023-03-04 14:10:00,165 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: status_report
+2023-03-04 14:10:00,245 INFO    Thread-13 :1532061 [dir_watcher.py:_on_file_modified():292] file/dir modified: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/output.log
+2023-03-04 14:10:00,490 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: keepalive
+2023-03-04 14:10:01,942 DEBUG   SenderThread:1532061 [sender.py:send():336] send: exit
+2023-03-04 14:10:01,943 INFO    SenderThread:1532061 [sender.py:send_exit():559] handling exit code: 1
+2023-03-04 14:10:01,943 INFO    SenderThread:1532061 [sender.py:send_exit():561] handling runtime: 26
+2023-03-04 14:10:01,944 INFO    SenderThread:1532061 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-03-04 14:10:01,944 INFO    SenderThread:1532061 [sender.py:send_exit():567] send defer
+2023-03-04 14:10:01,944 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: defer
+2023-03-04 14:10:01,944 INFO    HandlerThread:1532061 [handler.py:handle_request_defer():170] handle defer: 0
+2023-03-04 14:10:01,945 DEBUG   SenderThread:1532061 [sender.py:send_request():363] send_request: defer
+2023-03-04 14:10:01,945 INFO    SenderThread:1532061 [sender.py:send_request_defer():583] handle sender defer: 0
+2023-03-04 14:10:01,945 INFO    SenderThread:1532061 [sender.py:transition_state():587] send defer: 1
+2023-03-04 14:10:01,945 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: defer
+2023-03-04 14:10:01,946 INFO    HandlerThread:1532061 [handler.py:handle_request_defer():170] handle defer: 1
+2023-03-04 14:10:01,946 DEBUG   SenderThread:1532061 [sender.py:send_request():363] send_request: defer
+2023-03-04 14:10:01,946 INFO    SenderThread:1532061 [sender.py:send_request_defer():583] handle sender defer: 1
+2023-03-04 14:10:01,946 INFO    SenderThread:1532061 [sender.py:transition_state():587] send defer: 2
+2023-03-04 14:10:01,946 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: defer
+2023-03-04 14:10:01,947 INFO    HandlerThread:1532061 [handler.py:handle_request_defer():170] handle defer: 2
+2023-03-04 14:10:01,947 INFO    HandlerThread:1532061 [system_monitor.py:finish():161] Stopping system monitor
+2023-03-04 14:10:01,947 DEBUG   SystemMonitor:1532061 [system_monitor.py:_start():130] Starting system metrics aggregation loop
+2023-03-04 14:10:01,949 DEBUG   SystemMonitor:1532061 [system_monitor.py:_start():137] Finished system metrics aggregation loop
+2023-03-04 14:10:01,949 DEBUG   SystemMonitor:1532061 [system_monitor.py:_start():141] Publishing last batch of metrics
+2023-03-04 14:10:01,951 INFO    HandlerThread:1532061 [interfaces.py:finish():175] Joined cpu
+2023-03-04 14:10:01,952 INFO    HandlerThread:1532061 [interfaces.py:finish():175] Joined disk
+2023-03-04 14:10:02,246 INFO    Thread-13 :1532061 [dir_watcher.py:_on_file_modified():292] file/dir modified: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/output.log
+2023-03-04 14:10:02,247 INFO    Thread-13 :1532061 [dir_watcher.py:_on_file_modified():292] file/dir modified: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/wandb-summary.json
+2023-03-04 14:10:02,593 INFO    HandlerThread:1532061 [interfaces.py:finish():175] Joined gpu
+2023-03-04 14:10:02,593 INFO    HandlerThread:1532061 [interfaces.py:finish():175] Joined memory
+2023-03-04 14:10:02,593 INFO    HandlerThread:1532061 [interfaces.py:finish():175] Joined network
+2023-03-04 14:10:02,595 DEBUG   SenderThread:1532061 [sender.py:send_request():363] send_request: defer
+2023-03-04 14:10:02,596 INFO    SenderThread:1532061 [sender.py:send_request_defer():583] handle sender defer: 2
+2023-03-04 14:10:02,596 INFO    SenderThread:1532061 [sender.py:transition_state():587] send defer: 3
+2023-03-04 14:10:02,597 DEBUG   SenderThread:1532061 [sender.py:send():336] send: stats
+2023-03-04 14:10:02,597 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: defer
+2023-03-04 14:10:02,599 INFO    HandlerThread:1532061 [handler.py:handle_request_defer():170] handle defer: 3
+2023-03-04 14:10:02,599 DEBUG   SenderThread:1532061 [sender.py:send_request():363] send_request: defer
+2023-03-04 14:10:02,599 INFO    SenderThread:1532061 [sender.py:send_request_defer():583] handle sender defer: 3
+2023-03-04 14:10:02,599 INFO    SenderThread:1532061 [sender.py:transition_state():587] send defer: 4
+2023-03-04 14:10:02,600 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: defer
+2023-03-04 14:10:02,600 INFO    HandlerThread:1532061 [handler.py:handle_request_defer():170] handle defer: 4
+2023-03-04 14:10:02,601 DEBUG   SenderThread:1532061 [sender.py:send_request():363] send_request: defer
+2023-03-04 14:10:02,601 INFO    SenderThread:1532061 [sender.py:send_request_defer():583] handle sender defer: 4
+2023-03-04 14:10:02,601 INFO    SenderThread:1532061 [sender.py:transition_state():587] send defer: 5
+2023-03-04 14:10:02,601 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: defer
+2023-03-04 14:10:02,601 INFO    HandlerThread:1532061 [handler.py:handle_request_defer():170] handle defer: 5
+2023-03-04 14:10:02,602 DEBUG   SenderThread:1532061 [sender.py:send():336] send: summary
+2023-03-04 14:10:02,603 INFO    SenderThread:1532061 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-03-04 14:10:02,604 DEBUG   SenderThread:1532061 [sender.py:send_request():363] send_request: defer
+2023-03-04 14:10:02,604 INFO    SenderThread:1532061 [sender.py:send_request_defer():583] handle sender defer: 5
+2023-03-04 14:10:02,604 INFO    SenderThread:1532061 [sender.py:transition_state():587] send defer: 6
+2023-03-04 14:10:02,604 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: defer
+2023-03-04 14:10:02,604 INFO    HandlerThread:1532061 [handler.py:handle_request_defer():170] handle defer: 6
+2023-03-04 14:10:02,605 DEBUG   SenderThread:1532061 [sender.py:send_request():363] send_request: defer
+2023-03-04 14:10:02,605 INFO    SenderThread:1532061 [sender.py:send_request_defer():583] handle sender defer: 6
+2023-03-04 14:10:02,610 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: status_report
+2023-03-04 14:10:02,849 INFO    SenderThread:1532061 [sender.py:transition_state():587] send defer: 7
+2023-03-04 14:10:02,850 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: defer
+2023-03-04 14:10:02,850 INFO    HandlerThread:1532061 [handler.py:handle_request_defer():170] handle defer: 7
+2023-03-04 14:10:02,850 DEBUG   SenderThread:1532061 [sender.py:send_request():363] send_request: defer
+2023-03-04 14:10:02,850 INFO    SenderThread:1532061 [sender.py:send_request_defer():583] handle sender defer: 7
+2023-03-04 14:10:02,943 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: poll_exit
+2023-03-04 14:10:03,247 INFO    Thread-13 :1532061 [dir_watcher.py:_on_file_modified():292] file/dir modified: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/config.yaml
+2023-03-04 14:10:03,248 INFO    Thread-13 :1532061 [dir_watcher.py:_on_file_modified():292] file/dir modified: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/wandb-summary.json
+2023-03-04 14:10:03,670 INFO    SenderThread:1532061 [sender.py:transition_state():587] send defer: 8
+2023-03-04 14:10:03,670 DEBUG   SenderThread:1532061 [sender.py:send_request():363] send_request: poll_exit
+2023-03-04 14:10:03,670 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: defer
+2023-03-04 14:10:03,671 INFO    HandlerThread:1532061 [handler.py:handle_request_defer():170] handle defer: 8
+2023-03-04 14:10:03,672 DEBUG   SenderThread:1532061 [sender.py:send_request():363] send_request: defer
+2023-03-04 14:10:03,672 INFO    SenderThread:1532061 [sender.py:send_request_defer():583] handle sender defer: 8
+2023-03-04 14:10:03,673 INFO    SenderThread:1532061 [sender.py:transition_state():587] send defer: 9
+2023-03-04 14:10:03,673 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: defer
+2023-03-04 14:10:03,673 INFO    HandlerThread:1532061 [handler.py:handle_request_defer():170] handle defer: 9
+2023-03-04 14:10:03,674 DEBUG   SenderThread:1532061 [sender.py:send_request():363] send_request: defer
+2023-03-04 14:10:03,674 INFO    SenderThread:1532061 [sender.py:send_request_defer():583] handle sender defer: 9
+2023-03-04 14:10:03,674 INFO    SenderThread:1532061 [dir_watcher.py:finish():362] shutting down directory watcher
+2023-03-04 14:10:03,944 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: poll_exit
+2023-03-04 14:10:04,248 INFO    Thread-13 :1532061 [dir_watcher.py:_on_file_modified():292] file/dir modified: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/output.log
+2023-03-04 14:10:04,249 INFO    SenderThread:1532061 [dir_watcher.py:finish():392] scan: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files
+2023-03-04 14:10:04,249 INFO    SenderThread:1532061 [dir_watcher.py:finish():406] scan save: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/config.yaml config.yaml
+2023-03-04 14:10:04,249 INFO    SenderThread:1532061 [dir_watcher.py:finish():406] scan save: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/wandb-metadata.json wandb-metadata.json
+2023-03-04 14:10:04,249 INFO    SenderThread:1532061 [dir_watcher.py:finish():406] scan save: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/requirements.txt requirements.txt
+2023-03-04 14:10:04,250 INFO    SenderThread:1532061 [dir_watcher.py:finish():406] scan save: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/output.log output.log
+2023-03-04 14:10:04,256 INFO    SenderThread:1532061 [dir_watcher.py:finish():406] scan save: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/wandb-summary.json wandb-summary.json
+2023-03-04 14:10:04,256 INFO    SenderThread:1532061 [sender.py:transition_state():587] send defer: 10
+2023-03-04 14:10:04,257 DEBUG   SenderThread:1532061 [sender.py:send_request():363] send_request: poll_exit
+2023-03-04 14:10:04,263 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: defer
+2023-03-04 14:10:04,263 INFO    HandlerThread:1532061 [handler.py:handle_request_defer():170] handle defer: 10
+2023-03-04 14:10:04,270 DEBUG   SenderThread:1532061 [sender.py:send_request():363] send_request: defer
+2023-03-04 14:10:04,270 INFO    SenderThread:1532061 [sender.py:send_request_defer():583] handle sender defer: 10
+2023-03-04 14:10:04,276 INFO    SenderThread:1532061 [file_pusher.py:finish():162] shutting down file pusher
+2023-03-04 14:10:04,635 INFO    wandb-upload_2:1532061 [upload_job.py:push():138] Uploaded file /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/output.log
+2023-03-04 14:10:04,698 INFO    wandb-upload_0:1532061 [upload_job.py:push():138] Uploaded file /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/config.yaml
+2023-03-04 14:10:04,773 INFO    wandb-upload_3:1532061 [upload_job.py:push():138] Uploaded file /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/wandb-summary.json
+2023-03-04 14:10:04,902 INFO    wandb-upload_1:1532061 [upload_job.py:push():138] Uploaded file /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/files/requirements.txt
+2023-03-04 14:10:04,946 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: poll_exit
+2023-03-04 14:10:04,946 DEBUG   SenderThread:1532061 [sender.py:send_request():363] send_request: poll_exit
+2023-03-04 14:10:05,103 INFO    Thread-12 :1532061 [sender.py:transition_state():587] send defer: 11
+2023-03-04 14:10:05,103 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: defer
+2023-03-04 14:10:05,103 INFO    HandlerThread:1532061 [handler.py:handle_request_defer():170] handle defer: 11
+2023-03-04 14:10:05,104 DEBUG   SenderThread:1532061 [sender.py:send_request():363] send_request: defer
+2023-03-04 14:10:05,104 INFO    SenderThread:1532061 [sender.py:send_request_defer():583] handle sender defer: 11
+2023-03-04 14:10:05,104 INFO    SenderThread:1532061 [file_pusher.py:join():167] waiting for file pusher
+2023-03-04 14:10:05,104 INFO    SenderThread:1532061 [sender.py:transition_state():587] send defer: 12
+2023-03-04 14:10:05,105 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: defer
+2023-03-04 14:10:05,105 INFO    HandlerThread:1532061 [handler.py:handle_request_defer():170] handle defer: 12
+2023-03-04 14:10:05,105 DEBUG   SenderThread:1532061 [sender.py:send_request():363] send_request: defer
+2023-03-04 14:10:05,106 INFO    SenderThread:1532061 [sender.py:send_request_defer():583] handle sender defer: 12
+2023-03-04 14:10:05,399 INFO    SenderThread:1532061 [sender.py:transition_state():587] send defer: 13
+2023-03-04 14:10:05,399 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: defer
+2023-03-04 14:10:05,400 INFO    HandlerThread:1532061 [handler.py:handle_request_defer():170] handle defer: 13
+2023-03-04 14:10:05,400 DEBUG   SenderThread:1532061 [sender.py:send_request():363] send_request: defer
+2023-03-04 14:10:05,400 INFO    SenderThread:1532061 [sender.py:send_request_defer():583] handle sender defer: 13
+2023-03-04 14:10:05,401 INFO    SenderThread:1532061 [sender.py:transition_state():587] send defer: 14
+2023-03-04 14:10:05,401 DEBUG   SenderThread:1532061 [sender.py:send():336] send: final
+2023-03-04 14:10:05,402 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: defer
+2023-03-04 14:10:05,402 DEBUG   SenderThread:1532061 [sender.py:send():336] send: footer
+2023-03-04 14:10:05,402 INFO    HandlerThread:1532061 [handler.py:handle_request_defer():170] handle defer: 14
+2023-03-04 14:10:05,402 DEBUG   SenderThread:1532061 [sender.py:send_request():363] send_request: defer
+2023-03-04 14:10:05,403 INFO    SenderThread:1532061 [sender.py:send_request_defer():583] handle sender defer: 14
+2023-03-04 14:10:05,403 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: poll_exit
+2023-03-04 14:10:05,404 DEBUG   SenderThread:1532061 [sender.py:send_request():363] send_request: poll_exit
+2023-03-04 14:10:05,405 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: poll_exit
+2023-03-04 14:10:05,405 DEBUG   SenderThread:1532061 [sender.py:send_request():363] send_request: poll_exit
+2023-03-04 14:10:05,406 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: server_info
+2023-03-04 14:10:05,407 DEBUG   SenderThread:1532061 [sender.py:send_request():363] send_request: server_info
+2023-03-04 14:10:05,411 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: get_summary
+2023-03-04 14:10:05,412 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: sampled_history
+2023-03-04 14:10:05,616 INFO    MainThread:1532061 [wandb_run.py:_footer_history_summary_info():3442] rendering history
+2023-03-04 14:10:05,616 INFO    MainThread:1532061 [wandb_run.py:_footer_history_summary_info():3474] rendering summary
+2023-03-04 14:10:05,616 INFO    MainThread:1532061 [wandb_run.py:_footer_sync_info():3398] logging synced files
+2023-03-04 14:10:05,617 DEBUG   HandlerThread:1532061 [handler.py:handle_request():144] handle_request: shutdown
+2023-03-04 14:10:05,617 INFO    HandlerThread:1532061 [handler.py:finish():841] shutting down handler
+2023-03-04 14:10:06,407 INFO    WriterThread:1532061 [datastore.py:close():299] close: /workspace/alexsun/SimPLe/wandb/run-20230304_140934-4fngzr7a/run-4fngzr7a.wandb
+2023-03-04 14:10:06,616 INFO    SenderThread:1532061 [sender.py:finish():1493] shutting down sender
+2023-03-04 14:10:06,616 INFO    SenderThread:1532061 [file_pusher.py:finish():162] shutting down file pusher
+2023-03-04 14:10:06,616 INFO    SenderThread:1532061 [file_pusher.py:join():167] waiting for file pusher

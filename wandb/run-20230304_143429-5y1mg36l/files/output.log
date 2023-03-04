@@ -1,0 +1,54 @@
+
+
+
+
+
+Random exploration: 100%|██████████████████| 6400/6400 [00:10<00:00, 637.48it/s]
+Epoch:   0%|                                             | 0/15 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+Collecting interactions: 100%|████████████▉| 6376/6400 [00:17<00:00, 391.50it/s]/usr/lib/python3/dist-packages/torch/_tensor.py:575: UserWarning: floor_divide is deprecated, and will be removed in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values.
+To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor'). (Triggered internally at  ../aten/src/ATen/native/BinaryOps.cpp:461.)
+  return torch.floor_divide(self, other)
+/usr/lib/python3/dist-packages/torch/nn/functional.py:1805: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+Training world model:   0%|                           | 0/45000 [00:00<?, ?it/s]
+Epoch:   0%|                                             | 0/15 [00:18<?, ?it/s]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/workspace/alexsun/SimPLe/simple/__main__.py", line 212, in <module>
+    simple.train()
+  File "/workspace/alexsun/SimPLe/simple/__main__.py", line 143, in train
+    self.trainer.train(epoch, self.real_env)
+  File "/workspace/alexsun/SimPLe/simple/trainer.py", line 197, in train
+    loss.backward()
+  File "/usr/lib/python3/dist-packages/torch/_tensor.py", line 255, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph, inputs=inputs)
+  File "/usr/lib/python3/dist-packages/torch/autograd/__init__.py", line 147, in backward
+    Variable._execution_engine.run_backward(
+RuntimeError: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [12, 105, 80]], which is output 3 of UnbindBackward, is at version 8; expected version 4 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/workspace/alexsun/SimPLe/simple/__main__.py", line 212, in <module>
+    simple.train()
+  File "/workspace/alexsun/SimPLe/simple/__main__.py", line 143, in train
+    self.trainer.train(epoch, self.real_env)
+  File "/workspace/alexsun/SimPLe/simple/trainer.py", line 197, in train
+    loss.backward()
+  File "/usr/lib/python3/dist-packages/torch/_tensor.py", line 255, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph, inputs=inputs)
+  File "/usr/lib/python3/dist-packages/torch/autograd/__init__.py", line 147, in backward
+    Variable._execution_engine.run_backward(
+RuntimeError: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [12, 105, 80]], which is output 3 of UnbindBackward, is at version 8; expected version 4 instead. Hint: enable anomaly detection to find the operation that failed to compute its gradient, with torch.autograd.set_detect_anomaly(True).

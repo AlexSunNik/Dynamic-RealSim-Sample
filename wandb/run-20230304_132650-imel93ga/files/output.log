@@ -1,0 +1,73 @@
+
+
+
+
+Random exploration: 100%|██████████████████| 6400/6400 [00:09<00:00, 671.43it/s]
+Epoch:   0%|                                             | 0/15 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+Collecting interactions: 100%|████████████▉| 6368/6400 [00:17<00:00, 407.32it/s]/usr/lib/python3/dist-packages/torch/_tensor.py:575: UserWarning: floor_divide is deprecated, and will be removed in a future version of pytorch. It currently rounds toward 0 (like the 'trunc' function NOT 'floor'). This results in incorrect rounding for negative values.
+To keep the current behavior, use torch.div(a, b, rounding_mode='trunc'), or for actual floor division, use torch.div(a, b, rounding_mode='floor'). (Triggered internally at  ../aten/src/ATen/native/BinaryOps.cpp:461.)
+  return torch.floor_divide(self, other)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch:   0%|                                             | 0/15 [02:15<?, ?it/s]
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/workspace/alexsun/SimPLe/simple/__main__.py", line 210, in <module>
+    simple.train()
+  File "/workspace/alexsun/SimPLe/simple/__main__.py", line 143, in train
+    self.trainer.train(epoch, self.real_env)
+  File "/workspace/alexsun/SimPLe/simple/trainer.py", line 149, in train
+    self.optimizer.step()
+  File "/usr/lib/python3/dist-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/workspace/alexsun/SimPLe/simple/adafactor.py", line 190, in step
+    update = exp_avg_sq.rsqrt().mul_(grad)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/workspace/alexsun/SimPLe/simple/__main__.py", line 210, in <module>
+    simple.train()
+  File "/workspace/alexsun/SimPLe/simple/__main__.py", line 143, in train
+    self.trainer.train(epoch, self.real_env)
+  File "/workspace/alexsun/SimPLe/simple/trainer.py", line 149, in train
+    self.optimizer.step()
+  File "/usr/lib/python3/dist-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/workspace/alexsun/SimPLe/simple/adafactor.py", line 190, in step
+    update = exp_avg_sq.rsqrt().mul_(grad)
+KeyboardInterrupt
