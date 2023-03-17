@@ -13,7 +13,7 @@ from atari_utils.policy_wrappers import SampleWithTemperature
 from atari_utils.ppo_wrapper import PPO
 from atari_utils.utils import print_config, disable_baselines_logging
 from simple.subproc_vec_env import make_simulated_env
-from simple.trainer import Trainer
+
 
 class SimPLe:
 
@@ -188,6 +188,14 @@ if __name__ == '__main__':
     parser.add_argument('--use-stochastic-model', default=True, action='store_false')
     parser.add_argument('--use-wandb', default=False, action='store_true')
     parser.add_argument('--method-name', type=str, default="SimPL")
+
+    # when last_loss < 10% quantile of the recent 100 losses -> use the generated frame
+    parser.add_argument('--adaptive-ground-truth-quantile', type=float, default=0.1)
+    # first 1000 iterations -> use ground truth
+    parser.add_argument('--adaptive-ground-truth-force-ref-time', type=int, default=1000)
+    # take the recent 100 to evaluate the generated frame
+    parser.add_argument('--recent-losses-window-size', type=int, default=100)
+
     config = parser.parse_args()
 
 
@@ -197,6 +205,11 @@ if __name__ == '__main__':
         from simple.next_frame_predictor_confidence_man_alpha import NextFramePredictor
     else:
         from simple.next_frame_predictor import NextFramePredictor
+
+    if config.method_name == "adaptive_ground_truth_ref":
+        from simple.trainer_adaptive import Trainer
+    else:
+        from simple.trainer import Trainer
 
     print_config(config)
     disable_baselines_logging()

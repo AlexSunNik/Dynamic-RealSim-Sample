@@ -8,7 +8,8 @@ from tqdm import trange
 
 from atari_utils.logger import WandBLogger
 from simple.adafactor import Adafactor
-from copy import deepcopy
+
+import numpy as np
 
 class Trainer:
 
@@ -23,9 +24,24 @@ class Trainer:
 
         self.model_step = 1
         self.reward_step = 1
-
+        
+        # for adaptive ground truth ref
         self.ground_truth_ref_count = 0
+        self.recent_losses = []
 
+    def use_ground_truth(self, epoch, last_loss):
+
+        use_pred = epoch == 0 \
+            and self.ground_truth_ref_count > self.config.adaptive_ground_truth_force_ref_time \
+            and len(self.recent_losses) == self.config.recent_losses_window_size \
+            and last_loss < np.quantile(self.recent_losses, self.config.adaptive_ground_truth_quantile)
+            
+        self.recent_losses.append(last_loss)
+        if len(self.recent_losses) > self.config.recent_losses_window_size:
+            self.recent_losses = self.recent_losses[-self.config.recent_losses_window_size: ]
+        
+        return not use_pred
+            
     def train(self, epoch, env, steps=15000):
         if epoch == 0:
             steps *= 3
@@ -75,12 +91,6 @@ class Trainer:
             desc='Training world model',
             unit_scale=rollout_len
         )
-
-        anneal_scheduler = None
-        if hasattr(self.model, "use_alpha_anneal"):
-            # dummy = torch.tensor([0])
-            optimizer = torch.optim.SGD(torch.nn.ParameterList([torch.nn.Parameter(torch.zeros(1))]), lr=1)
-            anneal_scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, steps, eta_min=0, last_epoch=- 1, verbose=False)
         for i in iterator:
             # Scheduled sampling
             if epoch == 0:
@@ -93,6 +103,7 @@ class Trainer:
                 epsilon = 1 - epsilon
             else:
                 epsilon = 0
+                
 
             indices = get_indices()
             frames = torch.empty((self.config.batch_size, c * self.config.stacking, h, w))
@@ -117,72 +128,18 @@ class Trainer:
                 rewards = rewards.to(self.config.device)
                 new_states = torch.empty((self.config.batch_size, *new_states.shape), dtype=torch.long)
                 new_states = new_states.to(self.config.device)
-                new_next_states = deepcopy(new_states)
-
                 values = torch.empty((self.config.batch_size, *values.shape))
                 values = values.to(self.config.device)
                 for k in range(self.config.batch_size):
                     actions[k] = env.buffer[indices[k] + j][1]
                     rewards[k] = env.buffer[indices[k] + j][2]
                     new_states[k] = env.buffer[indices[k] + j][3]
-                    try:
-                        new_next_states[k] = env.buffer[indices[k] + j+1][3]
-                    except:
-                        new_next_states[k] = None
                     values[k] = env.buffer[indices[k] + j][5]
 
                 new_states_input = new_states.float() / 255
-                new_next_states = new_next_states.float() / 255
-                new_next_states.requires_grad = True
 
                 self.model.train()
-                res = self.model(frames, actions, new_states_input, epsilon)
-                confidence_pred = None
-                confidence_mask_pred = None
-                if len(res) == 3:
-                    frames_pred, reward_pred, values_pred = self.model(frames, actions, new_states_input, epsilon)
-                elif len(res) == 5:
-                    frames_pred, reward_pred, values_pred, confidence_pred, confidence_mask_pred = self.model(frames, actions, new_states_input, epsilon)
-                    # print("Testing")
-                    # print(frames_pred.shape)
-                    # print(confidence_mask_pred.shape)
-                    # print(new_next_states.shape)
-                if j < rollout_len - 1:
-                    for k in range(self.config.batch_size):
-                        if float(torch.rand((1,))) < epsilon:
-                            frame = new_states[k]        
-                            self.ground_truth_ref_count += 1
-                        else:
-                            frame = torch.argmax(frames_pred[k], dim=0)
-                        frame = preprocess_state(frame)
-                        conf_mask = confidence_mask_pred[k]
-                        cur_next_state = new_next_states[k]
-                        # print(conf_mask.shape)
-                        # print(frame.shape)
-                        # print("next state shape", cur_next_state.shape)
-                        # print("End Testing")
-                        if anneal_scheduler is not None:
-                            if cur_next_state is not None:
-                                alpha = anneal_scheduler.get_last_lr()[0]
-                                anneal_scheduler.step()
-                                blended = frame * (1 - alpha) + cur_next_state * alpha
-                                # print(frame.shape)
-                                # print(blended.shape)
-                                # exit()
-                            else:
-                                blended = frame
-                            frames[k] = torch.cat((frames[k, c:], blended), dim=0)
-
-                        elif confidence_pred is not None and confidence_mask_pred is not None:
-                            if cur_next_state is not None:
-                                blended = frame * conf_mask + cur_next_state * (1 - conf_mask)
-                                # print(blended.shape)
-                                # exit()
-                            else:
-                                blended = frame
-                            frames[k] = torch.cat((frames[k, c:], blended), dim=0)
-                        else:
-                            frames[k] = torch.cat((frames[k, c:], frame), dim=0)
+                frames_pred, reward_pred, values_pred = self.model(frames, actions, new_states_input, epsilon)
 
                 loss_reconstruct = nn.CrossEntropyLoss(reduction='none')(frames_pred, new_states)
                 clip = torch.tensor(self.config.target_loss_clipping).to(self.config.device)
@@ -205,6 +162,20 @@ class Trainer:
                 if self.config.use_stochastic_model:
                     tab.append(float(loss_lstm))
                 losses[j] = torch.tensor(tab)
+
+                if j < rollout_len - 1:
+                    for k in range(self.config.batch_size):
+                        frame = None
+
+                        # improved adaptive reference
+                        if self.use_ground_truth(epoch, float(loss_reconstruct)):
+                            frame = new_states[k]
+                            self.ground_truth_ref_count += 1
+                        else:
+                            frame = torch.argmax(frames_pred[k], dim=0)
+
+                        frame = preprocess_state(frame)
+                        frames[k] = torch.cat((frames[k, c:], frame), dim=0)
 
             losses = torch.mean(losses, dim=0)
             metrics = {
