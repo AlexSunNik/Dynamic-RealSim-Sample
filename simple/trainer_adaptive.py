@@ -30,9 +30,11 @@ class Trainer:
         self.recent_losses = []
 
     def use_ground_truth(self, epoch, last_loss):
+        
+        if epoch > 0:
+            return False
 
-        use_pred = epoch == 0 \
-            and self.ground_truth_ref_count > self.config.adaptive_ground_truth_force_ref_time \
+        use_pred = self.ground_truth_ref_count > self.config.adaptive_ground_truth_force_ref_time \
             and len(self.recent_losses) == self.config.recent_losses_window_size \
             and last_loss < np.quantile(self.recent_losses, self.config.adaptive_ground_truth_quantile)
             
@@ -43,6 +45,8 @@ class Trainer:
         return not use_pred
             
     def train(self, epoch, env, steps=15000):
+        print("using adaptive ground truth ref")
+
         if epoch == 0:
             steps *= 3
 
